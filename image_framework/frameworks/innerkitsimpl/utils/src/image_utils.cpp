@@ -134,7 +134,7 @@ uint32_t ImageUtils::RegisterPluginServer()
 #elif defined(_APPLE)
     vector<string> pluginPaths = { "./" };
 #else
-    vector<string> pluginPaths = { "/system/etc/multimediaplugin/image" };
+    vector<string> pluginPaths = { "/usr/share/ft/multimedia/image" };
 #endif
     PluginServer &pluginServer = DelayedRefSingleton<PluginServer>::GetInstance();
     uint32_t result = pluginServer.Register(std::move(pluginPaths));
