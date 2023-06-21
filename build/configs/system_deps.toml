@@ -31,4 +31,6 @@ package_deps = [
     "zlib-devel",
     "giflib-devel",
     "libpng-devel",
+    "libjpeg-turbo-devel",
+    "libwebp-devel",
 ]

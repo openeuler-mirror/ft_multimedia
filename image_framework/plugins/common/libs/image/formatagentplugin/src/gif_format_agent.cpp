@@ -14,12 +14,14 @@
  */
 
 #include "gif_format_agent.h"
+
+#include <string.h>
+
 #include "hilog/log_c.h"
 #include "hilog/log_cpp.h"
 #include "log_tags.h"
 #include "plugin_service.h"
 #include "sched.h"
-#include "string"
 
 namespace OHOS {
 namespace ImagePlugin {
