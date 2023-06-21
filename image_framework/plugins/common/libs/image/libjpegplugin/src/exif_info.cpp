@@ -65,40 +65,8 @@ namespace {
         const std::string name;
         const uint16_t number;
     } ExifTagTable[] = {
-        {EXIF_TAG_GPS_VERSION_ID, "GPSVersionID", 0x0000},
         {EXIF_TAG_INTEROPERABILITY_INDEX, "InteroperabilityIndex", 0x0001},
-        {EXIF_TAG_GPS_LATITUDE_REF, "GPSLatitudeRef", 0x0001},
         {EXIF_TAG_INTEROPERABILITY_VERSION, "InteroperabilityVersion", 0x0002},
-        {EXIF_TAG_GPS_LATITUDE, "GPSLatitude", 0x0002},
-        {EXIF_TAG_GPS_LONGITUDE_REF, "GPSLongitudeRef", 0x0003},
-        {EXIF_TAG_GPS_LONGITUDE, "GPSLongitude", 0x0004},
-        {EXIF_TAG_GPS_ALTITUDE_REF, "GPSAltitudeRef", 0x0005},
-        {EXIF_TAG_GPS_ALTITUDE, "GPSAltitude", 0x0006},
-        {EXIF_TAG_GPS_TIME_STAMP, "GPSTimeStamp", 0x0007},
-        {EXIF_TAG_GPS_SATELLITES, "GPSSatellites", 0x0008},
-        {EXIF_TAG_GPS_STATUS, "GPSStatus", 0x0009},
-        {EXIF_TAG_GPS_MEASURE_MODE, "GPSMeasureMode", 0x000a},
-        {EXIF_TAG_GPS_DOP, "GPSDOP", 0x000b},
-        {EXIF_TAG_GPS_SPEED_REF, "GPSSpeedRef", 0x000c},
-        {EXIF_TAG_GPS_SPEED, "GPSSpeed", 0x000d},
-        {EXIF_TAG_GPS_TRACK_REF, "GPSTrackRef", 0x000e},
-        {EXIF_TAG_GPS_TRACK, "GPSTrack", 0x000f},
-        {EXIF_TAG_GPS_IMG_DIRECTION_REF, "GPSImgDirectionRef", 0x0010},
-        {EXIF_TAG_GPS_IMG_DIRECTION, "GPSImgDirection", 0x0011},
-        {EXIF_TAG_GPS_MAP_DATUM, "GPSMapDatum", 0x0012},
-        {EXIF_TAG_GPS_DEST_LATITUDE_REF, "GPSDestLatitudeRef", 0x0013},
-        {EXIF_TAG_GPS_DEST_LATITUDE, "GPSDestLatitude", 0x0014},
-        {EXIF_TAG_GPS_DEST_LONGITUDE_REF, "GPSDestLongitudeRef", 0x0015},
-        {EXIF_TAG_GPS_DEST_LONGITUDE, "GPSDestLongitude", 0x0016},
-        {EXIF_TAG_GPS_DEST_BEARING_REF, "GPSDestBearingRef", 0x0017},
-        {EXIF_TAG_GPS_DEST_BEARING, "GPSDestBearing", 0x0018},
-        {EXIF_TAG_GPS_DEST_DISTANCE_REF, "GPSDestDistanceRef", 0x0019},
-        {EXIF_TAG_GPS_DEST_DISTANCE, "GPSDestDistance", 0x001a},
-        {EXIF_TAG_GPS_PROCESSING_METHOD, "GPSProcessingMethod", 0x001b},
-        {EXIF_TAG_GPS_AREA_INFORMATION, "GPSAreaInformation", 0x001c},
-        {EXIF_TAG_GPS_DATE_STAMP, "GPSDateStamp", 0x001d},
-        {EXIF_TAG_GPS_DIFFERENTIAL, "GPSDifferential", 0x001e},
-        {EXIF_TAG_GPS_H_POSITIONING_ERROR, "GPSHPositioningError", 0x001f},
         /* Not in EXIF 2.2 */
         {EXIF_TAG_NEW_SUBFILE_TYPE, "NewSubfileType", 0x00fe},
         {EXIF_TAG_IMAGE_WIDTH, "ImageWidth", 0x0100},
@@ -853,70 +821,6 @@ bool EXIFInfo::CreateExifEntry(const ExifTag &tag, ExifData *data, const std::st
                 return false;
             }
             exif_set_long((*ptrEntry)->data, order, (ExifLong)atoi(value.c_str()));
-            break;
-        }
-        case EXIF_TAG_GPS_LATITUDE: {
-            std::vector<std::string> latVec;
-            SplitStr(value, ",", latVec);
-            if (latVec.size() != CONSTANT_2) {
-                HiLog::Error(LABEL, "GPS_LATITUDE Invalid value %{public}s", value.c_str());
-                return false;
-            }
-
-            ExifRational latRational;
-            latRational.numerator = static_cast<ExifSLong>(atoi(latVec[0].c_str()));
-            latRational.denominator = static_cast<ExifSLong>(atoi(latVec[1].c_str()));
-            *ptrEntry = CreateExifTag(data, EXIF_IFD_GPS, EXIF_TAG_GPS_LATITUDE,
-                sizeof(latRational), EXIF_FORMAT_RATIONAL);
-            if ((*ptrEntry) == nullptr) {
-                HiLog::Error(LABEL, "Get exif entry failed.");
-                return false;
-            }
-            exif_set_rational((*ptrEntry)->data, order, latRational);
-            break;
-        }
-        case EXIF_TAG_GPS_LONGITUDE: {
-            std::vector<std::string> longVec;
-            SplitStr(value, ",", longVec);
-            if (longVec.size() != CONSTANT_2) {
-                HiLog::Error(LABEL, "GPS_LONGITUDE Invalid value %{public}s", value.c_str());
-                return false;
-            }
-
-            ExifRational longRational;
-            longRational.numerator = static_cast<ExifSLong>(atoi(longVec[0].c_str()));
-            longRational.denominator = static_cast<ExifSLong>(atoi(longVec[1].c_str()));
-            *ptrEntry = CreateExifTag(data, EXIF_IFD_GPS, EXIF_TAG_GPS_LONGITUDE,
-                sizeof(longRational), EXIF_FORMAT_RATIONAL);
-            if ((*ptrEntry) == nullptr) {
-                HiLog::Error(LABEL, "Get exif entry failed.");
-                return false;
-            }
-            exif_set_rational((*ptrEntry)->data, order, longRational);
-            break;
-        }
-        case EXIF_TAG_GPS_LATITUDE_REF: {
-            *ptrEntry = CreateExifTag(data, EXIF_IFD_GPS, EXIF_TAG_GPS_LATITUDE_REF,
-                value.length(), EXIF_FORMAT_ASCII);
-            if ((*ptrEntry) == nullptr) {
-                HiLog::Error(LABEL, "Get exif entry failed.");
-                return false;
-            }
-            if (memcpy_s((*ptrEntry)->data, value.length(), value.c_str(), value.length()) != 0) {
-                HiLog::Error(LABEL, "LATITUDE ref memcpy error");
-            }
-            break;
-        }
-        case EXIF_TAG_GPS_LONGITUDE_REF: {
-            *ptrEntry = CreateExifTag(data, EXIF_IFD_GPS, EXIF_TAG_GPS_LONGITUDE_REF,
-                value.length(), EXIF_FORMAT_ASCII);
-            if ((*ptrEntry) == nullptr) {
-                HiLog::Error(LABEL, "Get exif entry failed.");
-                return false;
-            }
-            if (memcpy_s((*ptrEntry)->data, value.length(), value.c_str(), value.length()) != 0) {
-                HiLog::Error(LABEL, "LONGITUDE ref memcpy error");
-            }
             break;
         }
         default:

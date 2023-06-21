@@ -752,14 +752,6 @@ ExifTag JpegDecoder::getExifTagFromKey(const std::string &key)
         return EXIF_TAG_IMAGE_LENGTH;
     } else if (IsSameTextStr(key, IMAGE_WIDTH)) {
         return EXIF_TAG_IMAGE_WIDTH;
-    } else if (IsSameTextStr(key, GPS_LATITUDE)) {
-        return EXIF_TAG_GPS_LATITUDE;
-    } else if (IsSameTextStr(key, GPS_LONGITUDE)) {
-        return EXIF_TAG_GPS_LONGITUDE;
-    } else if (IsSameTextStr(key, GPS_LATITUDE_REF)) {
-        return EXIF_TAG_GPS_LATITUDE_REF;
-    } else if (IsSameTextStr(key, GPS_LONGITUDE_REF)) {
-        return EXIF_TAG_GPS_LONGITUDE_REF;
     } else if (IsSameTextStr(key, DATE_TIME_ORIGINAL)) {
         return EXIF_TAG_DATE_TIME_ORIGINAL;
     } else if (IsSameTextStr(key, EXPOSURE_TIME)) {
