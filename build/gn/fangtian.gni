@@ -11,26 +11,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-1.0 {
-  global:
-    *ImagePacker*;
-    *ImageSource*;
-    *ImageCreator*;
-    *ImageReceiver*;
-    *BufferSourceStream*;
-    *PixelMap*;
-    *Matrix*;
-    *ScanlineFilter*GetFilterRowType*;
-    *ScanlineFilter*SetSrcPixelFormat*;
-    *ScanlineFilter*SetSrcRegion*;
-    *ScanlineFilter*SetPixelConvert*;
-    *ScanlineFilter*FilterLine*;
-    *PixelConvert*Create*;
-    *PixelConvert*Convert*;
-    *FileSourceStream*CreateSourceStream*;
-    *BufferPackerStream*;
-    *BasicTransformer*;
-    *IncrementalSourceStream*CreateSourceStream*;
-  local:
-    *;
-};
+import("//build/gn/templates/build_targets.gni")
+
+declare_args() {
+  is_fangtian_build = true
+}

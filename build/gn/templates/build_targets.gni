@@ -11,26 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-1.0 {
-  global:
-    *ImagePacker*;
-    *ImageSource*;
-    *ImageCreator*;
-    *ImageReceiver*;
-    *BufferSourceStream*;
-    *PixelMap*;
-    *Matrix*;
-    *ScanlineFilter*GetFilterRowType*;
-    *ScanlineFilter*SetSrcPixelFormat*;
-    *ScanlineFilter*SetSrcRegion*;
-    *ScanlineFilter*SetPixelConvert*;
-    *ScanlineFilter*FilterLine*;
-    *PixelConvert*Create*;
-    *PixelConvert*Convert*;
-    *FileSourceStream*CreateSourceStream*;
-    *BufferPackerStream*;
-    *BasicTransformer*;
-    *IncrementalSourceStream*CreateSourceStream*;
-  local:
-    *;
-};
+import("//build/gn/templates/ft_executable.gni")
+import("//build/gn/templates/ft_shared_library.gni")
+import("//build/gn/templates/ft_source_set.gni")
+import("//build/gn/templates/ft_static_library.gni")
