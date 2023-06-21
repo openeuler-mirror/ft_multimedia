@@ -15,8 +15,6 @@
 
 #include "png_decoder.h"
 #include "media_errors.h"
-#include "pngpriv.h"
-#include "pngstruct.h"
 #ifndef _WIN32
 #include "securec.h"
 #else
@@ -664,13 +662,6 @@ void PngDecoder::SaveInterlacedRows(png_bytep row, png_uint_32 rowNum, int pass)
         return;
     }
     png_bytep oldRow = pixelsData_ + (rowNum - firstRow_) * pngImageInfo_.rowDataSize;
-    uint64_t mollocByteCount = static_cast<uint64_t>(pngImageInfo_.rowDataSize) * pngImageInfo_.height;
-    uint64_t needByteCount = static_cast<uint64_t>(pngStructPtr_->width) * sizeof(*oldRow);
-    if (mollocByteCount < needByteCount) {
-        HiLog::Error(LABEL, "malloc byte size is(%{public}llu), but actual needs (%{public}llu)",
-                     static_cast<unsigned long long>(mollocByteCount), static_cast<unsigned long long>(needByteCount));
-        return;
-    }
     png_progressive_combine_row(pngStructPtr_, oldRow, row);
     if (pass == 0) {
         // The first pass initializes all rows.
