@@ -2,7 +2,7 @@
   "packageName":"LibPngPlugin",
   "version":"1.0.0.0",
   "targetVersion":"1.0.0.0",
-  "libraryPath":"libpngplugin.z.so",
+  "libraryPath":"libpngplugin.so",
   "classes": [
     {
       "className":"OHOS::ImagePlugin::PngDecoder",

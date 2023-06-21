@@ -2,7 +2,7 @@
   "packageName":"LibWebpPlugin",
   "version":"1.0.0.0",
   "targetVersion":"1.0.0.0",
-  "libraryPath":"libwebpplugin.z.so",
+  "libraryPath":"libwebpplugin.so",
   "classes": [
     {
       "className":"OHOS::ImagePlugin::WebpDecoder",
