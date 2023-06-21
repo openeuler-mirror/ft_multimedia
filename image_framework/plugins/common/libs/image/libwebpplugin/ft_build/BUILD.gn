@@ -1,0 +1,48 @@
+# Copyright (c) 2023 Huawei Technologies Co., Ltd. All rights reserved.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License
+
+import("//build/gn/fangtian.gni")
+
+ft_shared_library("webpplugin") {
+  include_dirs = [
+    "//image_framework/frameworks/innerkitsimpl/utils/include",
+    "//image_framework/frameworks/innerkitsimpl/pixelconverter/include",
+    "//image_framework/plugins/manager/include",
+    "//image_framework/plugins/manager/include/image",
+    "//image_framework/plugins/manager/include/pluginbase",
+    "//image_framework/plugins/common/libs/image/libwebpplugin/include",
+    "//image_framework/interfaces/innerkits/include",
+  ]
+
+  sources = [
+    "//image_framework/plugins/common/libs/image/libwebpplugin/src/plugin_export.cpp",
+    "//image_framework/plugins/common/libs/image/libwebpplugin/src/webp_decoder.cpp",
+    "//image_framework/plugins/common/libs/image/libwebpplugin/src/webp_encoder.cpp",
+  ]
+
+  defines = [ "DUAL_ADAPTER" ]
+
+  configs = [
+    "//build/gn/configs/system_libs:hilog_config",
+    "//build/gn/configs/system_libs:c_utils_config",
+    "//build/gn/configs/system_libs:skia_config",
+  ]
+
+  libs = [ "webp" ]
+
+  deps = [
+    "//image_framework/frameworks/innerkitsimpl/pixelconverter/ft_build:pixelconvertadapter",
+    "//image_framework/interfaces/innerkits/ft_build:image_native",
+    "//image_framework/plugins/manager/ft_build:pluginmanager",
+  ]
+}

@@ -18,7 +18,7 @@
 
 #include <cstdint>
 #include <string>
-#include "SkStream.h"
+#include "include/core/SkStream.h"
 #include "hilog/log.h"
 #include "input_data_stream.h"
 #include "log_tags.h"

@@ -12,6 +12,5 @@
 # limitations under the License.
 
 group("ft_multimedia") {
-  deps = [
-  ]
+  deps = [ "//image_framework/plugins/common/libs/ft_build:multimediaplugin" ]
 }

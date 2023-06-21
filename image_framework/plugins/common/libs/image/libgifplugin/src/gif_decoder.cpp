@@ -15,6 +15,8 @@
 
 #include "gif_decoder.h"
 
+#include <limits.h>
+
 namespace OHOS {
 namespace ImagePlugin {
 using namespace OHOS::HiviewDFX;
