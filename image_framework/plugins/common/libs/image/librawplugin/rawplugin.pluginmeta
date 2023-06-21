@@ -2,7 +2,7 @@
   "packageName":"LibRawPlugin",
   "version":"1.0.0.0",
   "targetVersion":"1.0.0.0",
-  "libraryPath":"librawplugin.z.so",
+  "libraryPath":"librawplugin.so",
   "classes": [
     {
       "className":"OHOS::ImagePlugin::RawDecoder",

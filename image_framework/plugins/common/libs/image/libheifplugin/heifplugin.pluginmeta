@@ -2,7 +2,7 @@
   "packageName":"LibHeifPlugin",
   "version":"1.0.0.0",
   "targetVersion":"1.0.0.0",
-  "libraryPath":"libheifplugin.z.so",
+  "libraryPath":"libheifplugin.so",
   "classes": [
     {
       "className":"OHOS::ImagePlugin::HeifDecoder",

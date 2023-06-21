@@ -2,7 +2,7 @@
   "packageName":"LibJpegPlugin",
   "version":"1.0.0.0",
   "targetVersion":"1.0.0.0",
-  "libraryPath":"libjpegplugin.z.so",
+  "libraryPath":"libjpegplugin.so",
   "classes": [
     {
       "className":"OHOS::ImagePlugin::JpegDecoder",

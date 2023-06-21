@@ -2,7 +2,7 @@
   "packageName":"LibBmpPlugin",
   "version":"1.0.0.0",
   "targetVersion":"1.0.0.0",
-  "libraryPath":"libbmpplugin.z.so",
+  "libraryPath":"libbmpplugin.so",
   "classes": [
     {
       "className":"OHOS::ImagePlugin::BmpDecoder",

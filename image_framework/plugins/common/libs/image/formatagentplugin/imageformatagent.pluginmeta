@@ -2,7 +2,7 @@
   "packageName":"LibImageFormatAgent",
   "version":"1.0.0.0",
   "targetVersion":"1.0.0.0",
-  "libraryPath":"libimageformatagent.z.so",
+  "libraryPath":"libimageformatagent.so",
   "classes": [
     {
       "className":"OHOS::ImagePlugin::JpegFormatAgent",
