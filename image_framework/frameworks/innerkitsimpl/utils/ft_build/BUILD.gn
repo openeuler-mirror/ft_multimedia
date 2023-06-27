@@ -25,7 +25,8 @@ ft_shared_library("image_utils") {
     "//image_framework/frameworks/innerkitsimpl/utils/src/image_utils.cpp",
   ]
 
-  defines = [ "DUAL_ADAPTER" ]
+  defines = ft_defines
+  defines += [ "DUAL_ADAPTER" ]
 
   configs = [
     "//build/gn/configs/system_libs:hilog_config",
