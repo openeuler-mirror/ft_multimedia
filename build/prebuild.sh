@@ -88,14 +88,14 @@ sudo cp -fr * /usr/local/include
 cd ${PROJECT_DIR}
 rm -fr ${PROJECT_DIR}/prebuilts/inc
 
-# copy config files to /usr/share/ft/multimedia/image
-mkdir -p /usr/share/ft/multimedia/image
-sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libpngplugin/pngplugin.pluginmeta /usr/share/ft/multimedia/image
-sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libjpegplugin/jpegplugin.pluginmeta /usr/share/ft/multimedia/image
-sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/formatagentplugin/imageformatagent.pluginmeta /usr/share/ft/multimedia/image
-sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/librawplugin/rawplugin.pluginmeta /usr/share/ft/multimedia/image
-sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libbmpplugin/bmpplugin.pluginmeta /usr/share/ft/multimedia/image
-sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libwebpplugin/webpplugin.pluginmeta /usr/share/ft/multimedia/image
-sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libgifplugin/gifplugin.pluginmeta /usr/share/ft/multimedia/image
+# copy config files to /usr/local/share/ft/multimedia/image
+sudo mkdir -p /usr/local/share/ft/multimedia/image
+sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libpngplugin/pngplugin.pluginmeta /usr/local/share/ft/multimedia/image
+sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libjpegplugin/jpegplugin.pluginmeta /usr/local/share/ft/multimedia/image
+sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/formatagentplugin/imageformatagent.pluginmeta /usr/local/share/ft/multimedia/image
+sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/librawplugin/rawplugin.pluginmeta /usr/local/share/ft/multimedia/image
+sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libbmpplugin/bmpplugin.pluginmeta /usr/local/share/ft/multimedia/image
+sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libwebpplugin/webpplugin.pluginmeta /usr/local/share/ft/multimedia/image
+sudo cp ${PROJECT_DIR}/image_framework/plugins/common/libs/image/libgifplugin/gifplugin.pluginmeta /usr/local/share/ft/multimedia/image
 
 echo -e "\033[32m[*] Pre-build Done. You need exec 'build.sh'.\033[0m"
