@@ -82,6 +82,18 @@ ARCHNAME=`uname -m`
 cd ${FT_PREBUILD_DIR}/libs/rpms/${ARCHNAME}
 sudo ./installRPM
 
+if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
+    echo "start build libace_skia_fangtian.so"
+    if [ ! -d ${PROJECT_DIR}/third_party/ft_flutter ]; then
+        git clone https://gitee.com/openeuler/ft_flutter.git ${PROJECT_DIR}/third_party/ft_flutter
+        cd ${PROJECT_DIR}/third_party/ft_flutter
+        ./project_build/prebuild.sh
+    fi
+    cd ${PROJECT_DIR}/third_party/ft_flutter
+    ./build.sh
+    cd ${PROJECT_DIR}
+fi
+
 # install prebuild include.
 if [ ! -d ${FT_PREBUILD_DIR}/inc ]; then
 git clone https://gitee.com/yanansong/devel_inc.git ${FT_PREBUILD_DIR}/inc
