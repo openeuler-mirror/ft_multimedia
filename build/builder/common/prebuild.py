@@ -47,7 +47,7 @@ def build_deps(output_dir):
             if os.path.exists("ninja"):
                 exec_sys_command(['cp', 'ninja', ninja_path])
                 logger.info("build ninja success")
-                exec_sys_command(['cp', 'ninja', usr_bin_path])
+                exec_sys_command(['sudo', 'cp', 'ninja', usr_bin_path])
                 logger.info("copy ninja success")
             os.chdir(cur_work_dir)
 
