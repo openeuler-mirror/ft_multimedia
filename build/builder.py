@@ -22,7 +22,6 @@ from rich.console import Console
 from builder.commands.build import Builder
 from builder.commands.format import Formatter
 from builder.commands.package import Packager
-from builder.common.utils import exec_sys_command
 from builder.common.env_checker import checker
 from builder.common.logger import logger, LoggerManager
 
@@ -174,8 +173,6 @@ class FtBuilder:
         if (subcommand == "build"):
             builder = Builder(self.args)
             rst = builder.exec_command()
-            if rst is True: 
-                exec_sys_command(['sudo', 'cp', os.path.join(builder.build_output_dir, 'common/common/*.so'), "/usr/lib64/"])
         elif (subcommand == "format"):
             formatter = Formatter(self.args)
             rst = formatter.exec_command()
