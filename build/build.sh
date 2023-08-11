@@ -38,7 +38,7 @@ fi
 
 if [ -e ${PROJECT_DIR}/third_party/ft_flutter ]; then
     cd ${PROJECT_DIR}/third_party/ft_flutter
-    ./build.sh -i
+    ./build.sh $*
     cd ${PROJECT_DIR}
 fi
 
