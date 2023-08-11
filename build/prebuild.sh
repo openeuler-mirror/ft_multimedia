@@ -87,7 +87,7 @@ if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
     if [ ! -d ${PROJECT_DIR}/third_party/ft_flutter ]; then
         git clone https://gitee.com/openeuler/ft_flutter.git ${PROJECT_DIR}/third_party/ft_flutter
         cd ${PROJECT_DIR}/third_party/ft_flutter
-        ./project_build/prebuild.sh $*
+        ./project_build/prebuild.sh
     fi
     cd ${PROJECT_DIR}/third_party/ft_flutter
     ./build.sh $*
