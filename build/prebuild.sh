@@ -90,7 +90,7 @@ if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
         ./project_build/prebuild.sh
     fi
     cd ${PROJECT_DIR}/third_party/ft_flutter
-    ./build.sh -i
+    ./build.sh $*
     cd ${PROJECT_DIR}
 fi
 
