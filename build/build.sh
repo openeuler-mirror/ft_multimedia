@@ -38,7 +38,7 @@ fi
 
 if [ -e ${PROJECT_DIR}/third_party/ft_flutter ]; then
     cd ${PROJECT_DIR}/third_party/ft_flutter
-    ./build.sh -i
+    ./build.sh $*
     cd ${PROJECT_DIR}
 fi
 
@@ -49,13 +49,6 @@ python3 ${PROJECT_DIR}/build/builder.py --project-dir ${PROJECT_DIR} build $*
 if [[ "$?" -ne 0 ]]; then
     echo -e "\033[31m[!] Build failed.\033[0m"
     exit 1
-fi
-
-ARCHNAME=`uname -m`
-if [[ ${ARCHNAME} == "x86_64" ]]; then
-    sudo cp ${PROJECT_DIR}/out/Debug/x64/common/common/*.so /usr/lib64/
-elif [[ ${ARCHNAME}  == "aarch64" ]]; then
-    sudo cp ${PROJECT_DIR}/out/Debug/aarch64/common/common/*.so /usr/lib64/
 fi
 
 echo -e "\033[0;32m[-] Build done.\033[0m"
