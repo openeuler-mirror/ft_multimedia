@@ -26,9 +26,7 @@
 #include <variant>
 #include <map>
 
-#ifdef USE_SURFACE_FT
 #include <surface.h>
-#endif
 #include "napi/native_api.h"
 #include "napi/native_node_api.h"
 #include "image_receiver.h"
