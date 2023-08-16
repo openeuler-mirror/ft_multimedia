@@ -21,6 +21,7 @@
 #include "image_creator_context.h"
 #include "image_napi.h"
 #include "image_creator_manager.h"
+#include <linux/limits.h>
 
 using OHOS::HiviewDFX::HiLog;
 using std::string;

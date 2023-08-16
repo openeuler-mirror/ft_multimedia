@@ -21,6 +21,7 @@
 #include "image_receiver_context.h"
 #include "image_napi.h"
 #include "image_receiver_manager.h"
+#include <linux/limits.h>
 
 using OHOS::HiviewDFX::HiLog;
 using std::string;

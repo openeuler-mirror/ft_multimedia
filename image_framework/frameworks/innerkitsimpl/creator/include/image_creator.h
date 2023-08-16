@@ -17,6 +17,7 @@
 #define IMAGE_CREATOR_H
 
 #include <surface.h>
+#include "display_type.h"
 #include <cstdint>
 #include <string>
 #include <list>
@@ -27,7 +28,6 @@
 #include "log_tags.h"
 #include "media_errors.h"
 #include "pixel_map.h"
-#include "display_type.h"
 #include "image_creator_context.h"
 #include "image_receiver.h"
 
