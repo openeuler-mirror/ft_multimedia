@@ -21,6 +21,7 @@
 #include "string_ex.h"
 #include "image_trace.h"
 #include "hitrace_meter.h"
+#include <linux/limits.h>
 
 using OHOS::HiviewDFX::HiLog;
 namespace {

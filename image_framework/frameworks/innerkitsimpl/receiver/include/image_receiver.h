@@ -17,6 +17,7 @@
 #define FRAMEWORKS_INNERKITSIMPL_RECEIVER_INCLUDE_IMAGE_RECEIVER_H_
 
 #include <surface.h>
+#include "display_type.h"
 #include <cstdint>
 #include <string>
 #include <securec.h>
@@ -26,7 +27,6 @@
 #include "log_tags.h"
 #include "media_errors.h"
 #include "pixel_map.h"
-#include "display_type.h"
 #include "image_receiver_context.h"
 
 namespace OHOS {
