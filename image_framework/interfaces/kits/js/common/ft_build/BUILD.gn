@@ -12,8 +12,7 @@
 # limitations under the License.
 
 import("//build/gn/fangtian.gni")
-
-image_napi_root = "//third_party/ft_multimedia"
+import("//config.gni")
 
 config("image_external_config") {
   include_dirs = [
