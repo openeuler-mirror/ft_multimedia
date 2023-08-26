@@ -82,8 +82,11 @@ ft_shared_library("image") {
     "-DIMAGE_DEBUG_FLAG",
   ]
 
-  deps = [
+  public_deps = [
     "//napi/ft_build:ace_napi",
+  ]
+
+  deps = [
     "//build/gn/configs/system_libs:ft_engine",
     "//build/gn/configs/system_libs:hilog",
     "//build/gn/configs/system_libs:c_utils",
