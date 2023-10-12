@@ -85,7 +85,7 @@ sudo ./installRPM
 if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
     echo "start build libace_skia_fangtian.so"
     if [ ! -d ${PROJECT_DIR}/third_party/ft_flutter ]; then
-        git clone https://gitee.com/openeuler/ft_flutter.git ${PROJECT_DIR}/third_party/ft_flutter
+        git clone https://gitee.com/openeuler/ft_flutter.git -b weekly_20231012 ${PROJECT_DIR}/third_party/ft_flutter
         cd ${PROJECT_DIR}/third_party/ft_flutter
         ./project_build/prebuild.sh
     fi
