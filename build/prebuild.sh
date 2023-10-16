@@ -73,14 +73,14 @@ cd ${PREBUILD_DIR}
 FT_PREBUILD_DIR=$(pwd)
 
 # install prebuild library
-if [ ! -d ${FT_PREBUILD_DIR}/libs ]; then
-git clone https://gitee.com/yanansong/ft_engine_prebuild.git -b rpms ${FT_PREBUILD_DIR}/libs
-fi
+# if [ ! -d ${FT_PREBUILD_DIR}/libs ]; then
+# git clone https://gitee.com/yanansong/ft_engine_prebuild.git -b rpms ${FT_PREBUILD_DIR}/libs
+# fi
 
 ARCHNAME=`uname -m`
 
-cd ${FT_PREBUILD_DIR}/libs/rpms/${ARCHNAME}
-sudo ./installRPM
+# cd ${FT_PREBUILD_DIR}/libs/rpms/${ARCHNAME}
+# sudo ./installRPM
 
 if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
     echo "start build libace_skia_fangtian.so"
@@ -95,13 +95,13 @@ if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
 fi
 
 # install prebuild include.
-if [ ! -d ${FT_PREBUILD_DIR}/inc ]; then
-git clone https://gitee.com/yanansong/devel_inc.git ${FT_PREBUILD_DIR}/inc
-fi
+# if [ ! -d ${FT_PREBUILD_DIR}/inc ]; then
+# git clone https://gitee.com/yanansong/devel_inc.git ${FT_PREBUILD_DIR}/inc
+# fi
 
 # copy include files to /usr/include. 
-cd ${FT_PREBUILD_DIR}/inc
-sudo cp -fr * /usr/local/include
+# cd ${FT_PREBUILD_DIR}/inc
+# sudo cp -fr * /usr/local/include
 
 # copy config files to /usr/local/share/ft/multimedia/image
 sudo mkdir -p /usr/local/share/ft/multimedia/image
