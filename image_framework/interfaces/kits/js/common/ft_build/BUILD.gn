@@ -19,26 +19,9 @@ config("image_external_config") {
     "../include",
     "$image_napi_root/image_framework/frameworks/innerkitsimpl/receiver/include",
     "$image_napi_root/image_framework/frameworks/innerkitsimpl/creator/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/pixelconverter/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/converter/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/codec/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/common/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/stream/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/utils/include",
     "$image_napi_root/image_framework/frameworks/kits/js/common/include",
     "$image_napi_root/image_framework/interfaces/kits/js/common/include",
-    "$image_napi_root/image_framework/plugins/common/libs/image/libjpegplugin",
-    "$image_napi_root/image_framework/plugins/manager/include",
-    "$image_napi_root/image_framework/plugins/manager/include/image",
-    "$image_napi_root/image_framework/interfaces/innerkits/include",
     "$image_napi_root/image_framework/interfaces/kits/native/include",
-  ]
-
-  include_dirs += [
-    "$image_napi_root/image_framework/plugins/manager/include/pluginbase",
-    "$image_napi_root/image_framework/plugins/common/libs/image/libjpegplugin/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/utils/include",
-    "$image_napi_root/image_framework/frameworks/innerkitsimpl/converter/include",
   ]
 
 }
