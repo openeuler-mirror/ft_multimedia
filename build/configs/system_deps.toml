@@ -34,4 +34,5 @@ package_deps = [
     "libjpeg-turbo-devel",
     "libwebp-devel",
     "distributed-utils",
+    "distributed-build",
 ]
