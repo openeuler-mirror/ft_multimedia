@@ -12,8 +12,8 @@
 # limitations under the License.
 
 config("c_utils_config") {
-    include_dirs = [ "${sys_inc}/c_utils" ]
-    libs = [ "utils", "sec_shared" ]
+    include_dirs = [ "${usr_inc}/c_utils" ]
+    libs = [ "utils.z", "boundscheck" ]
 }
 
 config("ipc_core_config") {
@@ -22,13 +22,14 @@ config("ipc_core_config") {
 }
 
 config("hilog_config") {
-    include_dirs = [ "${sys_inc}/hilog" ]
+    include_dirs = [ "${usr_inc}/hilog" ]
     libs = [ "hilog" ]
 }
 
 config("hitrace_meter_config") {
-    include_dirs = [ "${sys_inc}/hitrace_meter" ]
-    libs = [ "hitrace_meter" ]
+    # include_dirs = [ "${sys_inc}/hitrace_meter" ]
+    include_dirs = [ "//image_framework/mock/native/include", ]
+    # libs = [ "hitrace_meter" ]
 }
 
 config("eventhandler_config") {
@@ -37,7 +38,7 @@ config("eventhandler_config") {
 }
 
 config("skia_config") {
-    include_dirs = [ "${sys_inc}/skia" ]
+    include_dirs = [ "${usr_inc}/skia" ]
     libs = [ "ace_skia_fangtian" ]
 }
 
