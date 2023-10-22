@@ -27,11 +27,10 @@ config("hilog_config") {
     libs = [ "hilog.z" ]
 }
 
-config("hitrace_meter_config") {
+# config("hitrace_meter_config") {
     # include_dirs = [ "${sys_inc}/hitrace_meter" ]
-    include_dirs = [ "//image_framework/mock/native/include", ]
     # libs = [ "hitrace_meter" ]
-}
+# }
 
 config("eventhandler_config") {
     include_dirs = [ "${sys_inc}/eventhandler" ]

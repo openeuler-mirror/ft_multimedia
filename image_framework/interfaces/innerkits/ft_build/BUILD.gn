@@ -72,7 +72,7 @@ ft_shared_library("image_native") {
     "//build/gn/configs/system_libs:c_utils_config",
     "//build/gn/configs/system_libs:skia_config",
     "//build/gn/configs/system_libs:ipc_core_config",
-    "//build/gn/configs/system_libs:hitrace_meter_config",
+    # "//build/gn/configs/system_libs:hitrace_meter_config",
   ]
 
   deps = [

@@ -25,7 +25,7 @@
 #include "post_proc.h"
 #include "parcel.h"
 #include "image_trace.h"
-#include "hitrace_meter.h"
+// #include "hitrace_meter.h"
 #ifndef _WIN32
 #include "securec.h"
 #else
@@ -759,7 +759,7 @@ bool PixelMap::IsSameImage(const PixelMap &other)
 
 uint32_t PixelMap::ReadPixels(const uint64_t &bufferSize, uint8_t *dst)
 {
-    StartTrace(HITRACE_TAG_ZIMAGE, "ReadPixels by bufferSize");
+    // StartTrace(HITRACE_TAG_ZIMAGE, "ReadPixels by bufferSize");
     if (dst == nullptr) {
         HiLog::Error(LABEL, "read pixels by buffer input dst address is null.");
         return ERR_IMAGE_READ_PIXELMAP_FAILED;
@@ -778,7 +778,7 @@ uint32_t PixelMap::ReadPixels(const uint64_t &bufferSize, uint8_t *dst)
         HiLog::Error(LABEL, "read pixels by buffer memcpy the pixelmap data to dst fail, error:%{public}d", ret);
         return ERR_IMAGE_READ_PIXELMAP_FAILED;
     }
-    FinishTrace(HITRACE_TAG_ZIMAGE);
+    // FinishTrace(HITRACE_TAG_ZIMAGE);
     return SUCCESS;
 }
 
@@ -1003,7 +1003,7 @@ uint32_t PixelMap::WritePixels(const uint8_t *source, const uint64_t &bufferSize
 
 uint32_t PixelMap::WritePixels(const uint8_t *source, const uint64_t &bufferSize)
 {
-    StartTrace(HITRACE_TAG_ZIMAGE, "WritePixels");
+    // StartTrace(HITRACE_TAG_ZIMAGE, "WritePixels");
     if (source == nullptr || bufferSize < static_cast<uint64_t>(pixelsSize_)) {
         HiLog::Error(LABEL, "write pixels by buffer source is nullptr or size(%{public}llu) < pixelSize(%{public}u).",
                      static_cast<unsigned long long>(bufferSize), pixelsSize_);
@@ -1026,7 +1026,7 @@ uint32_t PixelMap::WritePixels(const uint8_t *source, const uint64_t &bufferSize
         HiLog::Error(LABEL, "write pixels by buffer memcpy to pixelmap data from source fail, error:%{public}d", ret);
         return ERR_IMAGE_WRITE_PIXELMAP_FAILED;
     }
-    FinishTrace(HITRACE_TAG_ZIMAGE);
+    // FinishTrace(HITRACE_TAG_ZIMAGE);
     return SUCCESS;
 }
 
