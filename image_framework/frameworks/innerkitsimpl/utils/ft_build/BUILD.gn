@@ -23,6 +23,7 @@ ft_shared_library("image_utils") {
   sources = [
     "//image_framework/frameworks/innerkitsimpl/utils/src/image_trace.cpp",
     "//image_framework/frameworks/innerkitsimpl/utils/src/image_utils.cpp",
+    "//image_framework/mock/native/src/hitrace_meter.cpp",
   ]
 
   defines = ft_defines
