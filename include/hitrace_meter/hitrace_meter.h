@@ -22,6 +22,8 @@
 extern "C" {
 #endif
 
+constexpr uint64_t HITRACE_TAG_ZIMAGE = (1ULL << 34); // Image module tag.
+
 void StartTrace(uint64_t label, const std::string& value, float limit = -1) {};
 
 void FinishTrace(uint64_t label) {};
