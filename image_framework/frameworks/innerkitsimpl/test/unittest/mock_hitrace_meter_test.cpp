@@ -15,7 +15,7 @@
 
 #include <gtest/gtest.h>
 #include <fstream>
-// #include "hitrace_meter.h"
+#include "hitrace_meter.h"
 
 using namespace testing::ext;
 namespace OHOS {

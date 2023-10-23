@@ -19,7 +19,7 @@
 #include <vector>
 #include "buffer_source_stream.h"
 #if !defined(_WIN32) && !defined(_APPLE)
-// #include "hitrace_meter.h"
+#include "hitrace_meter.h"
 #endif
 #include "file_source_stream.h"
 #include "image/abs_image_decoder.h"
@@ -145,7 +145,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(unique_ptr<istream> is, c
                                                        uint32_t &errorCode)
 {
 #if !defined(_WIN32) && !defined(_APPLE)
-    // StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by istream");
+    StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by istream");
 #endif
     IMAGE_LOGD("[ImageSource]create Imagesource with stream.");
 
@@ -164,7 +164,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(unique_ptr<istream> is, c
     }
     errorCode = SUCCESS;
 #if !defined(_WIN32) && !defined(_APPLE)
-    // FinishTrace(HITRACE_TAG_ZIMAGE);
+    FinishTrace(HITRACE_TAG_ZIMAGE);
 #endif
     return unique_ptr<ImageSource>(sourcePtr);
 }
@@ -173,7 +173,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(const uint8_t *data, uint
                                                        uint32_t &errorCode)
 {
 #if !defined(_WIN32) && !defined(_APPLE)
-    // StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by data");
+    StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by data");
 #endif
     IMAGE_LOGD("[ImageSource]create Imagesource with buffer.");
 
@@ -202,7 +202,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(const uint8_t *data, uint
     }
     errorCode = SUCCESS;
 #if !defined(_WIN32) && !defined(_APPLE)
-    // FinishTrace(HITRACE_TAG_ZIMAGE);
+    FinishTrace(HITRACE_TAG_ZIMAGE);
 #endif
     return unique_ptr<ImageSource>(sourcePtr);
 }
@@ -211,7 +211,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(const std::string &pathNa
                                                        uint32_t &errorCode)
 {
 #if !defined(_WIN32) && !defined(_APPLE)
-    // StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by path");
+    StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by path");
 #endif
     IMAGE_LOGD("[ImageSource]create Imagesource with pathName.");
 
@@ -234,7 +234,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(const std::string &pathNa
     }
     errorCode = SUCCESS;
 #if !defined(_WIN32) && !defined(_APPLE)
-    // FinishTrace(HITRACE_TAG_ZIMAGE);
+    FinishTrace(HITRACE_TAG_ZIMAGE);
 #endif
     return unique_ptr<ImageSource>(sourcePtr);
 }
@@ -243,7 +243,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(const int fd, const Sourc
                                                        uint32_t &errorCode)
 {
 #if !defined(_WIN32) && !defined(_APPLE)
-    // StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by fd");
+    StartTrace(HITRACE_TAG_ZIMAGE, "CreateImageSource by fd");
 #endif
     unique_ptr<SourceStream> streamPtr = FileSourceStream::CreateSourceStream(fd);
     if (streamPtr == nullptr) {
@@ -259,7 +259,7 @@ unique_ptr<ImageSource> ImageSource::CreateImageSource(const int fd, const Sourc
     }
     errorCode = SUCCESS;
 #if !defined(_WIN32) && !defined(_APPLE)
-    // FinishTrace(HITRACE_TAG_ZIMAGE);
+    FinishTrace(HITRACE_TAG_ZIMAGE);
 #endif
     return unique_ptr<ImageSource>(sourcePtr);
 }
@@ -313,7 +313,7 @@ unique_ptr<PixelMap> ImageSource::CreatePixelMapEx(uint32_t index, const DecodeO
 unique_ptr<PixelMap> ImageSource::CreatePixelMap(uint32_t index, const DecodeOptions &opts, uint32_t &errorCode)
 {
 #if !defined(_WIN32) && !defined(_APPLE)
-    // StartTrace(HITRACE_TAG_ZIMAGE, "CreatePixelMap");
+    StartTrace(HITRACE_TAG_ZIMAGE, "CreatePixelMap");
 #endif
     std::unique_lock<std::mutex> guard(decodingMutex_);
     opts_ = opts;
@@ -431,7 +431,7 @@ unique_ptr<PixelMap> ImageSource::CreatePixelMap(uint32_t index, const DecodeOpt
         }
     }
 #if !defined(_WIN32) && !defined(_APPLE)
-    // FinishTrace(HITRACE_TAG_ZIMAGE);
+    FinishTrace(HITRACE_TAG_ZIMAGE);
 #endif
     return pixelMap;
 }
@@ -570,7 +570,7 @@ DecodeEvent ImageSource::GetDecodeEvent()
 uint32_t ImageSource::GetImageInfo(uint32_t index, ImageInfo &imageInfo)
 {
 #if !defined(_WIN32) && !defined(_APPLE)
-    // StartTrace(HITRACE_TAG_ZIMAGE, "GetImageInfo by index");
+    StartTrace(HITRACE_TAG_ZIMAGE, "GetImageInfo by index");
 #endif
     uint32_t ret = SUCCESS;
     std::unique_lock<std::mutex> guard(decodingMutex_);
@@ -589,7 +589,7 @@ uint32_t ImageSource::GetImageInfo(uint32_t index, ImageInfo &imageInfo)
 
     imageInfo = info;
 #if !defined(_WIN32) && !defined(_APPLE)
-    // FinishTrace(HITRACE_TAG_ZIMAGE);
+    FinishTrace(HITRACE_TAG_ZIMAGE);
 #endif
     return SUCCESS;
 }
