@@ -77,8 +77,9 @@ ARCHNAME=`uname -m`
 if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
     echo "start build libace_skia_fangtian.so"
     if [ ! -d ${PROJECT_DIR}/third_party/ft_flutter ]; then
-        git clone https://gitee.com/huangyuxin2023/ft_flutter.git ${PROJECT_DIR}/third_party/ft_flutter
+        git clone -b 2203sp2_20231023 https://gitee.com/openeuler/ft_flutter.git ${PROJECT_DIR}/third_party/ft_flutter
         cd ${PROJECT_DIR}/third_party/ft_flutter
+        git fetch https://gitee.com/openeuler/ft_flutter.git pull/24/head:pr_24
         ./project_build/prebuild.sh
     fi
     cd ${PROJECT_DIR}/third_party/ft_flutter
