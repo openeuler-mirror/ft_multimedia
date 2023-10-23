@@ -1,3 +1,4 @@
+@@ -1,29 +0,0 @@
 /*
  * Copyright (C) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,22 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef INTERFACES_INNERKITS_NATIVE_HITRACE_METER_H
-#define INTERFACES_INNERKITS_NATIVE_HITRACE_METER_H
+#include "hitrace_meter.h"
+namespace OHOS {
+    void StartTrace(uint64_t label, const std::string& value, float limit)
+    {
 
-#include <string>
+    }
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+    void FinishTrace(uint64_t label)
+    {
 
-constexpr uint64_t HITRACE_TAG_ZIMAGE = (1ULL << 34); // Image module tag.
-
-void StartTrace(uint64_t label, const std::string& value, float limit = -1);
-
-void FinishTrace(uint64_t label);
-
-#ifdef __cplusplus
+    }
 }
-#endif
-#endif // INTERFACES_INNERKITS_NATIVE_HITRACE_METER_H
