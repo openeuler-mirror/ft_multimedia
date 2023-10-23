@@ -1,4 +1,3 @@
-@@ -1,29 +0,0 @@
 /*
  * Copyright (C) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,13 @@
 namespace OHOS {
     void StartTrace(uint64_t label, const std::string& value, float limit)
     {
-
+        (void) label;
+        (void) value;
+        (void) limit;
     }
 
     void FinishTrace(uint64_t label)
     {
-
+        (void) label;
     }
 }
