@@ -1,0 +1,29 @@
+#Instructions: 2 parameters are required to install the header file to /usr/include/
+#              Param1: relative path of header file
+#              Param2: installation directory name (if this directory does not exist,
+#                      it will be automatically created in /usr/include/)
+#Example: install test/test1.h to /usr/include/test/test1.h,  add: test/test1.h   /usr/include/test/
+
+image_framework/plugins/common/libs/image/libpngplugin/pngplugin.pluginmeta             /usr/local/share/ft/multimedia/image/
+image_framework/plugins/common/libs/image/libjpegplugin/jpegplugin.pluginmeta           /usr/local/share/ft/multimedia/image/
+image_framework/plugins/common/libs/image/formatagentplugin/imageformatagent.pluginmeta /usr/local/share/ft/multimedia/image/
+image_framework/plugins/common/libs/image/librawplugin/rawplugin.pluginmeta             /usr/local/share/ft/multimedia/image/
+image_framework/plugins/common/libs/image/libbmpplugin/bmpplugin.pluginmeta             /usr/local/share/ft/multimedia/image/
+image_framework/plugins/common/libs/image/libwebpplugin/webpplugin.pluginmeta           /usr/local/share/ft/multimedia/image/
+image_framework/plugins/common/libs/image/libgifplugin/gifplugin.pluginmeta             /usr/local/share/ft/multimedia/image/
+
+image_framework/interfaces/innerkits/include/decode_listener.h		          /usr/include/image/
+image_framework/interfaces/innerkits/include/image_native_interface_utils.h   /usr/include/image/
+image_framework/interfaces/innerkits/include/image_packer.h		              /usr/include/image/
+image_framework/interfaces/innerkits/include/image_source.h		              /usr/include/image/
+image_framework/interfaces/innerkits/include/image_type.h		              /usr/include/image/
+image_framework/interfaces/innerkits/include/incremental_pixel_map.h		  /usr/include/image/
+image_framework/interfaces/innerkits/include/log_tags.h		                  /usr/include/image/
+image_framework/interfaces/innerkits/include/media_errors.h		              /usr/include/image/
+image_framework/interfaces/innerkits/include/modules.h		                  /usr/include/image/
+image_framework/interfaces/innerkits/include/peer_listener.h		          /usr/include/image/
+image_framework/interfaces/innerkits/include/pixel_map.h		              /usr/include/image/
+image_framework/interfaces/innerkits/include/pixel_map_manager.h		      /usr/include/image/
+image_framework/interfaces/innerkits/include/pixel_map_parcel.h		          /usr/include/image/
+image_framework/frameworks/innerkitsimpl/utils/include/image_utils.h               /usr/include/image/
+image_framework/frameworks/innerkitsimpl/converter/include/pixel_map_rosen_utils.h /usr/include/image/
