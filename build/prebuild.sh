@@ -72,20 +72,12 @@ fi
 cd ${PREBUILD_DIR}
 FT_PREBUILD_DIR=$(pwd)
 
-# install prebuild library
-if [ ! -d ${FT_PREBUILD_DIR}/libs ]; then
-git clone https://gitee.com/yanansong/ft_engine_prebuild.git -b rpms ${FT_PREBUILD_DIR}/libs
-fi
-
 ARCHNAME=`uname -m`
-
-cd ${FT_PREBUILD_DIR}/libs/rpms/${ARCHNAME}
-sudo ./installRPM
 
 if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
     echo "start build libace_skia_fangtian.so"
     if [ ! -d ${PROJECT_DIR}/third_party/ft_flutter ]; then
-        git clone https://gitee.com/openeuler/ft_flutter.git ${PROJECT_DIR}/third_party/ft_flutter
+        git clone -b 2203sp2_20231023 https://gitee.com/openeuler/ft_flutter.git ${PROJECT_DIR}/third_party/ft_flutter
         cd ${PROJECT_DIR}/third_party/ft_flutter
         ./project_build/prebuild.sh
     fi
@@ -93,15 +85,6 @@ if [ ! -e /usr/lib64/libace_skia_fangtian.so ]; then
     ./build.sh $*
     cd ${PROJECT_DIR}
 fi
-
-# install prebuild include.
-if [ ! -d ${FT_PREBUILD_DIR}/inc ]; then
-git clone https://gitee.com/yanansong/devel_inc.git ${FT_PREBUILD_DIR}/inc
-fi
-
-# copy include files to /usr/include. 
-cd ${FT_PREBUILD_DIR}/inc
-sudo cp -fr * /usr/local/include
 
 # copy config files to /usr/local/share/ft/multimedia/image
 sudo mkdir -p /usr/local/share/ft/multimedia/image
