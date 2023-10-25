@@ -25,5 +25,8 @@ image_framework/interfaces/innerkits/include/peer_listener.h		          /usr/inc
 image_framework/interfaces/innerkits/include/pixel_map.h		              /usr/include/image/
 image_framework/interfaces/innerkits/include/pixel_map_manager.h		      /usr/include/image/
 image_framework/interfaces/innerkits/include/pixel_map_parcel.h		          /usr/include/image/
+image_framework/frameworks/innerkitsimpl/utils/include/image_format.h              /usr/include/image/
+image_framework/frameworks/innerkitsimpl/utils/include/image_log.h                 /usr/include/image/
+image_framework/frameworks/innerkitsimpl/utils/include/image_trace.h               /usr/include/image/
 image_framework/frameworks/innerkitsimpl/utils/include/image_utils.h               /usr/include/image/
 image_framework/frameworks/innerkitsimpl/converter/include/pixel_map_rosen_utils.h /usr/include/image/
